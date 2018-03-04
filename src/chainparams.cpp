@@ -45,24 +45,7 @@ static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data
 // + Contains no strange transactions
 static Checkpoints::MapCheckpoints mapCheckpoints =
     boost::assign::map_list_of
-	(0, uint256("0x00000c393bf1eaf9757be560092cc08a7b1ff0345e874b12521522e27862d7d7"))
-	(2, uint256("0x00000310d966793ec3dd080a97b10afa0c848432c01b4053d2c6f206e1449e28"))
-	(1479, uint256("0x00000000071b53f74e2f55ffa657cf1fc39807fb584e797ed0c6b22a4527d51c"))
-	(5000, uint256("0x0000000002afc607345f345261bf9713c7a9cf8d50191cb338250bd4be0090b5"))
-	(10000, uint256("0x000000000a43a6d2b09f1dbf4ea454b639838fb43686158e131d8b7a36777ca6"))
-	(20000, uint256("0x0000000000e1a4f0659738de768c662164a20f11ca16c77dde422ee2d7369a80"))
-	(30000, uint256("0x00000000040ac4aa7fda2d6fdd2745c788469b482eec8da79842e88bbbfc70c3"))
-	(40000, uint256("0x0000000003265c4aded591f0b648b626abf0e4316295b6baeeadbb6c744f768e"))
-	(50000, uint256("0x00000000052c4943642d41377f0968650871a5351c896a4cfe74e41edd2adf28"))
-	(60000, uint256("0x00000000016a565d7d8b0c96138a9d6873510fece3beffd5295ea517ce4e6b8d"))
-	(70000, uint256("0x00000000039673e6ee9944479068800c78f479dfb6b5d23d748d542af073440d"))
-	(80000, uint256("0x0000000008dacfe17e44c93490c36c4d365fb6309f614c05bfa9952e9c08765f"))
-	(89319, uint256("0x00000000031005c122f47eef1495a44221632fc7cc94b6b5ff68bc7da826c012"))	
-	(95771, uint256("0x00000000021cef5896d94a2d87d928d8fdf943a8d260386471e06b03c635acc6"))
-	(104581, uint256("0x0000000001040e54fab7cb94317cade9461c6500c77a492ba1afd4d04949861b"))
-	(127770, uint256("0x000000000053c7733ed070490012321680e21557bb309ebc0e52265326ffbd0d"))
-	(130116, uint256("0x000000000059038c0121e8c503ba86ca6233b25f0ab1c4836be94d5e1bc79db9"))
-	(152989, uint256("0x0000000000a34969026f2d3e05aa2e8464581107530d8c40ea353dc4244d3161"));
+	(0, uint256("0x00000c393bf1eaf9757be560092cc08a7b1ff0345e874b12521522e27862d7d7"));
 	
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
@@ -149,20 +132,7 @@ public:
         assert(hashGenesisBlock == uint256("0x00000c393bf1eaf9757be560092cc08a7b1ff0345e874b12521522e27862d7d7"));
         assert(genesis.hashMerkleRoot == uint256("0xa84934befc603b6dc91cd53895bf45cd056b4e7a9562067d7608b94e8704815d"));
 		
-        vSeeds.push_back(CDNSSeedData("solarisnode.dyndns.org", "solarisnode.dyndns.org"));
-		vSeeds.push_back(CDNSSeedData("solarisnode1.dyndns.org", "solarisnode1.dyndns.org"));
-		vSeeds.push_back(CDNSSeedData("solarisnode2.dyndns.org", "solarisnode2.dyndns.org"));
-		vSeeds.push_back(CDNSSeedData("solarisnode3.dyndns.org", "solarisnode3.dyndns.org"));
-		vSeeds.push_back(CDNSSeedData("solarisnode4.dyndns.org", "solarisnode4.dyndns.org"));
-		vSeeds.push_back(CDNSSeedData("solarisnode5.dyndns.org", "solarisnode5.dyndns.org"));
-		vSeeds.push_back(CDNSSeedData("solarisnode6.dyndns.org", "solarisnode6.dyndns.org"));
-		
-		vSeeds.push_back(CDNSSeedData("node1.solariscoin.com", "node1.solariscoin.com"));
-		vSeeds.push_back(CDNSSeedData("node2.solariscoin.com", "node2.solariscoin.com"));
-		vSeeds.push_back(CDNSSeedData("node3.solariscoin.com", "node3.solariscoin.com"));
-		vSeeds.push_back(CDNSSeedData("node4.solariscoin.com", "node4.solariscoin.com"));
-		vSeeds.push_back(CDNSSeedData("node5.solariscoin.com", "node5.solariscoin.com"));
-		vSeeds.push_back(CDNSSeedData("node6.solariscoin.com", "node6.solariscoin.com"));
+        vSeeds.push_back(CDNSSeedData("194.87.101.240", "194.87.101.240"));
 
 		
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 63);
@@ -241,10 +211,7 @@ public:
         //assert(hashGenesisBlock == uint256("0x0000041e482b9b9691d98eefb48473405c0b8ec31b76df3797c74a78680ef818"));
         vFixedSeeds.clear();
         vSeeds.clear();
-        vSeeds.push_back(CDNSSeedData("fuzzbawls.pw", "solaris-testnet.seed.fuzzbawls.pw"));
-        vSeeds.push_back(CDNSSeedData("fuzzbawls.pw", "solaris-testnet.seed2.fuzzbawls.pw"));
-        vSeeds.push_back(CDNSSeedData("s3v3nh4cks.ddns.net", "s3v3nh4cks.ddns.net"));
-        vSeeds.push_back(CDNSSeedData("88.198.192.110", "88.198.192.110"));
+        vSeeds.push_back(CDNSSeedData("194.87.101.240", "194.87.101.240"));
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 139); // Testnet solaris addresses start with 'x' or 'y'
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 19);  // Testnet solaris script addresses start with '8' or '9'
         base58Prefixes[SECRET_KEY] = std::vector<unsigned char>(1, 239);     // Testnet private keys start with '9' or 'c' (Bitcoin defaults)
