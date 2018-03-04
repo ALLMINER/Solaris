@@ -45,12 +45,12 @@ static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data
 // + Contains no strange transactions
 static Checkpoints::MapCheckpoints mapCheckpoints =
     boost::assign::map_list_of
-	(0, uint256("0x00000c393bf1eaf9757be560092cc08a7b1ff0345e874b12521522e27862d7d7"));
+	(0, uint256("0x00000722a387a012c333113bc72024067a01e7d092277054191670feb4d7271e"));
 	
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
-    1517154464, // * UNIX timestamp of last checkpoint block
-    186630,    // * total number of transactions between genesis and last checkpoint
+    1520178826, // * UNIX timestamp of last checkpoint block
+    0,    // * total number of transactions between genesis and last checkpoint
                 //   (the tx=... number in the SetBestChain debug.log lines)
     14400        // * estimated number of transactions per day after checkpoint
 };
@@ -90,10 +90,10 @@ public:
          * a large 4-byte int at any alignment.
          */
         pchMessageStart[0] = 0x02;
-        pchMessageStart[1] = 0x21;
-        pchMessageStart[2] = 0x01;
+        pchMessageStart[1] = 0x2a;
+        pchMessageStart[2] = 0x0c;
         pchMessageStart[3] = 0xa1;
-        vAlertPubKey = ParseHex("045da9271f5d9df405d9e83c7c7e62e9c831cc85c51ffaa6b515c4f9c845dec4bf256460003f26ba9d394a17cb57e6759fe231eca75b801c20bccd19cbe4b7942d");
+        vAlertPubKey = ParseHex("0484d90e17b407221bc32d44832716418f090c323c594749d66adf3ff5c630bad489712738ada058d25a676f3dfa964258db28d3dbb58097f03cc8f2b4d22eb8e5");
         nDefaultPort = 60020;
         bnProofOfWorkLimit = ~uint256(0) >> 20; // Solaris starting difficulty is 1 / 2^12
         nSubsidyHalvingInterval = 210000;
@@ -101,7 +101,7 @@ public:
         nMinerThreads = 0;
         nTargetTimespan = 1 * 60; // Solaris: 1 minute
         nTargetSpacing = 1 * 60;  // Solaris: 1 minute
-        nMaturity = 101;
+        nMaturity = 6;
 		nMaxMoneyOut = 10000000000 * COIN;
         /** Height or Time Based Activations **/
         nLastPOWBlock = 259200;
@@ -111,7 +111,7 @@ public:
         nZerocoinStartTime = 1523653200; // April 13, 2018 21:00:00 UTC
 		nZerocoinStartHeight = 262596;
 		
-		const char* pszTimestamp = "Solaris 30-09-2017";
+		const char* pszTimestamp = "KRAIT 18-02-2018";
 		
         CMutableTransaction txNew;
         txNew.vin.resize(1);
@@ -119,18 +119,18 @@ public:
 				
         txNew.vin[0].scriptSig = CScript() << 486604799 << CScriptNum(4) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
         txNew.vout[0].nValue = 0 * COIN;
-        txNew.vout[0].scriptPubKey = CScript() << ParseHex("045da9271f5d9df405d9e83c7c7e62e9c831cc85c51ffaa6b515c4f9c845dec4bf256460003f26ba9d394a17cb57e6759fe231eca75b801c20bccd19cbe4b7942d") << OP_CHECKSIG;
+        txNew.vout[0].scriptPubKey = CScript() << ParseHex("0484d90e17b407221bc32d44832716418f090c323c594749d66adf3ff5c630bad489712738ada058d25a676f3dfa964258db28d3dbb58097f03cc8f2b4d22eb8e5") << OP_CHECKSIG;
         genesis.vtx.push_back(txNew);
         genesis.hashPrevBlock = 0;
         genesis.hashMerkleRoot = genesis.BuildMerkleTree();
         genesis.nVersion = 1;
-        genesis.nTime = 1506779239;
+        genesis.nTime = 1520178826;
         genesis.nBits = 0x1e0ffff0;
-        genesis.nNonce = 500317;
+        genesis.nNonce = 21911486;
         hashGenesisBlock = genesis.GetHash();
 		
-        assert(hashGenesisBlock == uint256("0x00000c393bf1eaf9757be560092cc08a7b1ff0345e874b12521522e27862d7d7"));
-        assert(genesis.hashMerkleRoot == uint256("0xa84934befc603b6dc91cd53895bf45cd056b4e7a9562067d7608b94e8704815d"));
+        assert(hashGenesisBlock == uint256("0x00000722a387a012c333113bc72024067a01e7d092277054191670feb4d7271e"));
+        assert(genesis.hashMerkleRoot == uint256("0xd937e75cb33178449539789d86288a0cf8280a095113c0ef19a3a2f1cdff1c7b"));
 		
         vSeeds.push_back(CDNSSeedData("194.87.101.240", "194.87.101.240"));
 
@@ -148,12 +148,12 @@ public:
         fAllowMinDifficultyBlocks = false;
         fDefaultConsistencyChecks = false;
         fRequireStandard = true;
-        fMineBlocksOnDemand = false;
+        fMineBlocksOnDemand = true;
         fSkipProofOfWorkCheck = false;
         fTestnetToBeDeprecatedFieldRPC = false;
         fHeadersFirstSyncingActive = false;
         nPoolMaxTransactions = 3;
-        strSporkKey = "045da9271f5d9df405d9e83c7c7e62e9c831cc85c51ffaa6b515c4f9c845dec4bf256460003f26ba9d394a17cb57e6759fe231eca75b801c20bccd19cbe4b7942d";
+        strSporkKey = "0484d90e17b407221bc32d44832716418f090c323c594749d66adf3ff5c630bad489712738ada058d25a676f3dfa964258db28d3dbb58097f03cc8f2b4d22eb8e5";
         
         strObfuscationPoolDummyAddress = "Sg3aLcSeLqbpEsVgoXtDFrpDYDfAsf1qxv";
         nStartMasternodePayments = 1403728576; //Wed, 25 Jun 2014 20:36:16 GMT
