@@ -1,5 +1,5 @@
 // Copyright (c) 2014-2016 The Dash developers
-// Copyright (c) 2016-2017 The Solaris developers
+// Copyright (c) 2016-2017 The Krait developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -29,7 +29,7 @@ int nCompleteTXLocks;
 
 //txlock - Locks transaction
 //
-//step 1.) Broadcast intention to lock transaction inputs, "txlreg", CTransaction
+//step 1.) Broadcast intention to lock transaction inputs, "tKRAITeg", CTransaction
 //step 2.) Top SWIFTTX_SIGNATURES_TOTAL masternodes, open connect to top 1 masternode.
 //         Send "txvote", CTransaction, Signature, Approve
 //step 3.) Top 1 masternode, waits for SWIFTTX_SIGNATURES_REQUIRED messages. Upon success, sends "txlock'

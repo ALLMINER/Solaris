@@ -2,7 +2,7 @@
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
 // Copyright (c) 2015-2017 The PIVX developers
-// Copyright (c) 2017-2018 The Solaris developers
+// Copyright (c) 2017-2018 The Krait developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -238,10 +238,10 @@ Value stop(const Array& params, bool fHelp)
     if (fHelp || params.size() > 1)
         throw runtime_error(
             "stop\n"
-            "\nStop Solaris server.");
+            "\nStop Krait server.");
     // Shutdown will take long enough that the response should get back
     StartShutdown();
-    return "Solaris server stopping";
+    return "Krait server stopping";
 }
 
 
@@ -319,36 +319,36 @@ static const CRPCCommand vRPCCommands[] =
         {"hidden", "reconsiderblock", &reconsiderblock, true, true, false},
         {"hidden", "setmocktime", &setmocktime, true, false, false},
 
-        /* Solaris features */
-        {"solaris", "masternode", &masternode, true, true, false},
-        {"solaris", "listmasternodes", &listmasternodes, true, true, false},
-        {"solaris", "getmasternodecount", &getmasternodecount, true, true, false},
-        {"solaris", "masternodeconnect", &masternodeconnect, true, true, false},
-        {"solaris", "masternodecurrent", &masternodecurrent, true, true, false},
-        {"solaris", "masternodedebug", &masternodedebug, true, true, false},
-        {"solaris", "startmasternode", &startmasternode, true, true, false},
-        {"solaris", "createmasternodekey", &createmasternodekey, true, true, false},
-        {"solaris", "getmasternodeoutputs", &getmasternodeoutputs, true, true, false},
-        {"solaris", "listmasternodeconf", &listmasternodeconf, true, true, false},
-        {"solaris", "getmasternodestatus", &getmasternodestatus, true, true, false},
-        {"solaris", "getmasternodewinners", &getmasternodewinners, true, true, false},
-        {"solaris", "getmasternodescores", &getmasternodescores, true, true, false},
-        {"solaris", "mnbudget", &mnbudget, true, true, false},
-        {"solaris", "preparebudget", &preparebudget, true, true, false},
-        {"solaris", "submitbudget", &submitbudget, true, true, false},
-        {"solaris", "mnbudgetvote", &mnbudgetvote, true, true, false},
-        {"solaris", "getbudgetvotes", &getbudgetvotes, true, true, false},
-        {"solaris", "getnextsuperblock", &getnextsuperblock, true, true, false},
-        {"solaris", "getbudgetprojection", &getbudgetprojection, true, true, false},
-        {"solaris", "getbudgetinfo", &getbudgetinfo, true, true, false},
-        {"solaris", "mnbudgetrawvote", &mnbudgetrawvote, true, true, false},
-        {"solaris", "mnfinalbudget", &mnfinalbudget, true, true, false},
-        {"solaris", "checkbudgets", &checkbudgets, true, true, false},
-        {"solaris", "mnsync", &mnsync, true, true, false},
-        {"solaris", "spork", &spork, true, true, false},
-        {"solaris", "getpoolinfo", &getpoolinfo, true, true, false},
+        /* Krait features */
+        {"krait", "masternode", &masternode, true, true, false},
+        {"krait", "listmasternodes", &listmasternodes, true, true, false},
+        {"krait", "getmasternodecount", &getmasternodecount, true, true, false},
+        {"krait", "masternodeconnect", &masternodeconnect, true, true, false},
+        {"krait", "masternodecurrent", &masternodecurrent, true, true, false},
+        {"krait", "masternodedebug", &masternodedebug, true, true, false},
+        {"krait", "startmasternode", &startmasternode, true, true, false},
+        {"krait", "createmasternodekey", &createmasternodekey, true, true, false},
+        {"krait", "getmasternodeoutputs", &getmasternodeoutputs, true, true, false},
+        {"krait", "listmasternodeconf", &listmasternodeconf, true, true, false},
+        {"krait", "getmasternodestatus", &getmasternodestatus, true, true, false},
+        {"krait", "getmasternodewinners", &getmasternodewinners, true, true, false},
+        {"krait", "getmasternodescores", &getmasternodescores, true, true, false},
+        {"krait", "mnbudget", &mnbudget, true, true, false},
+        {"krait", "preparebudget", &preparebudget, true, true, false},
+        {"krait", "submitbudget", &submitbudget, true, true, false},
+        {"krait", "mnbudgetvote", &mnbudgetvote, true, true, false},
+        {"krait", "getbudgetvotes", &getbudgetvotes, true, true, false},
+        {"krait", "getnextsuperblock", &getnextsuperblock, true, true, false},
+        {"krait", "getbudgetprojection", &getbudgetprojection, true, true, false},
+        {"krait", "getbudgetinfo", &getbudgetinfo, true, true, false},
+        {"krait", "mnbudgetrawvote", &mnbudgetrawvote, true, true, false},
+        {"krait", "mnfinalbudget", &mnfinalbudget, true, true, false},
+        {"krait", "checkbudgets", &checkbudgets, true, true, false},
+        {"krait", "mnsync", &mnsync, true, true, false},
+        {"krait", "spork", &spork, true, true, false},
+        {"krait", "getpoolinfo", &getpoolinfo, true, true, false},
 #ifdef ENABLE_WALLET
-        {"solaris", "obfuscation", &obfuscation, false, false, true}, /* not threadSafe because of SendMoney */
+        {"krait", "obfuscation", &obfuscation, false, false, true}, /* not threadSafe because of SendMoney */
 
         /* Wallet */
         {"wallet", "addmultisigaddress", &addmultisigaddress, true, false, true},
@@ -627,16 +627,16 @@ void StartRPCThreads()
         unsigned char rand_pwd[32];
         GetRandBytes(rand_pwd, 32);
         uiInterface.ThreadSafeMessageBox(strprintf(
-                                             _("To use solarisd, or the -server option to solaris-qt, you must set an rpcpassword in the configuration file:\n"
+                                             _("To use kraitd, or the -server option to krait-qt, you must set an rpcpassword in the configuration file:\n"
                                                "%s\n"
                                                "It is recommended you use the following random password:\n"
-                                               "rpcuser=solarisrpc\n"
+                                               "rpcuser=kraitrpc\n"
                                                "rpcpassword=%s\n"
                                                "(you do not need to remember this password)\n"
                                                "The username and password MUST NOT be the same.\n"
                                                "If the file does not exist, create it with owner-readable-only file permissions.\n"
                                                "It is also recommended to set alertnotify so you are notified of problems;\n"
-                                               "for example: alertnotify=echo %%s | mail -s \"Solaris Alert\" admin@foo.com\n"),
+                                               "for example: alertnotify=echo %%s | mail -s \"Krait Alert\" admin@foo.com\n"),
                                              GetConfigFile().string(),
                                              EncodeBase58(&rand_pwd[0], &rand_pwd[0] + 32)),
             "", CClientUIInterface::MSG_ERROR | CClientUIInterface::SECURE);
@@ -1087,7 +1087,7 @@ std::vector<std::string> CRPCTable::listCommands() const
 
 std::string HelpExampleCli(string methodname, string args)
 {
-    return "> solaris-cli " + methodname + " " + args + "\n";
+    return "> krait-cli " + methodname + " " + args + "\n";
 }
 
 std::string HelpExampleRpc(string methodname, string args)

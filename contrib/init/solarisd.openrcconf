@@ -1,25 +1,25 @@
-# /etc/conf.d/solarisd: config file for /etc/init.d/solarisd
+# /etc/conf.d/kraitd: config file for /etc/init.d/kraitd
 
 # Config file location
-#BITCOIND_CONFIGFILE="/etc/solaris/solaris.conf"
+#BITCOIND_CONFIGFILE="/etc/krait/krait.conf"
 
 # What directory to write pidfile to?  (created and owned by $BITCOIND_USER)
-#BITCOIND_PIDDIR="/var/run/solarisd"
+#BITCOIND_PIDDIR="/var/run/kraitd"
 
 # What filename to give the pidfile
-#BITCOIND_PIDFILE="${BITCOIND_PIDDIR}/solarisd.pid"
+#BITCOIND_PIDFILE="${BITCOIND_PIDDIR}/kraitd.pid"
 
-# Where to write solarisd data (be mindful that the blockchain is large)
-#BITCOIND_DATADIR="/var/lib/solarisd"
+# Where to write kraitd data (be mindful that the blockchain is large)
+#BITCOIND_DATADIR="/var/lib/kraitd"
 
-# User and group to own solarisd process
-#BITCOIND_USER="solaris"
-#BITCOIND_GROUP="solaris"
+# User and group to own kraitd process
+#BITCOIND_USER="krait"
+#BITCOIND_GROUP="krait"
 
-# Path to solarisd executable
-#BITCOIND_BIN="/usr/bin/solarisd"
+# Path to kraitd executable
+#BITCOIND_BIN="/usr/bin/kraitd"
 
-# Nice value to run solarisd under
+# Nice value to run kraitd under
 #BITCOIND_NICE=0
 
 # Additional options (avoid -conf and -datadir, use flags above)

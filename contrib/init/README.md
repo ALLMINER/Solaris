@@ -1,10 +1,10 @@
 Sample configuration files for:
 
-SystemD: solarisd.service
-Upstart: solarisd.conf
-OpenRC:  solarisd.openrc
-         solarisd.openrcconf
-CentOS:  solarisd.init
+SystemD: kraitd.service
+Upstart: kraitd.conf
+OpenRC:  kraitd.openrc
+         kraitd.openrcconf
+CentOS:  kraitd.init
 
 have been made available to assist packagers in creating node packages here.
 
