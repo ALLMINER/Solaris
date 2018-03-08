@@ -94,7 +94,7 @@ public:
         pchMessageStart[2] = 0x0c;
         pchMessageStart[3] = 0xa1;
         vAlertPubKey = ParseHex("0484d90e17b407221bc32d44832716418f090c323c594749d66adf3ff5c630bad489712738ada058d25a676f3dfa964258db28d3dbb58097f03cc8f2b4d22eb8e5");
-        nDefaultPort = 60020;
+        nDefaultPort = 60021;
         bnProofOfWorkLimit = ~uint256(0) >> 20; // Krait starting difficulty is 1 / 2^12
         nSubsidyHalvingInterval = 210000;
         nMaxReorganizationDepth = 100;
