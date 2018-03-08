@@ -45,11 +45,11 @@ static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data
 // + Contains no strange transactions
 static Checkpoints::MapCheckpoints mapCheckpoints =
     boost::assign::map_list_of
-	(0, uint256("0x00000722a387a012c333113bc72024067a01e7d092277054191670feb4d7271e"));
+	(0, uint256("0x000008f98da9a790d44ff144e24262fe56d9f7ce7000b7c30c84c45da5c895a9"));
 	
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
-    1520178826, // * UNIX timestamp of last checkpoint block
+    1520530811, // * UNIX timestamp of last checkpoint block
     0,    // * total number of transactions between genesis and last checkpoint
                 //   (the tx=... number in the SetBestChain debug.log lines)
     14400        // * estimated number of transactions per day after checkpoint
@@ -108,7 +108,7 @@ public:
         nModifierUpdateBlock = 1;
 		
         nBlockEnforceSerialRange = 1; //Enforce serial range starting this block
-        nZerocoinStartTime = 1523653200; // April 13, 2018 21:00:00 UTC
+        nZerocoinStartTime = 1543653200; // April 16, 2019 21:00:00 UTC
 		nZerocoinStartHeight = 262596;
 		
 		const char* pszTimestamp = "KRAIT 18-02-2018";
@@ -124,12 +124,12 @@ public:
         genesis.hashPrevBlock = 0;
         genesis.hashMerkleRoot = genesis.BuildMerkleTree();
         genesis.nVersion = 1;
-        genesis.nTime = 1520178826;
+        genesis.nTime = 1520530811;
         genesis.nBits = 0x1e0ffff0;
-        genesis.nNonce = 21911486;
+        genesis.nNonce = 20853759;
         hashGenesisBlock = genesis.GetHash();
 		
-        assert(hashGenesisBlock == uint256("0x00000722a387a012c333113bc72024067a01e7d092277054191670feb4d7271e"));
+        assert(hashGenesisBlock == uint256("0x000008f98da9a790d44ff144e24262fe56d9f7ce7000b7c30c84c45da5c895a9"));
         assert(genesis.hashMerkleRoot == uint256("0xd937e75cb33178449539789d86288a0cf8280a095113c0ef19a3a2f1cdff1c7b"));
 		
         vSeeds.push_back(CDNSSeedData("194.87.101.240", "194.87.101.240"));
